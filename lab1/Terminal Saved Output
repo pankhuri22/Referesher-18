@@ -1,0 +1,406 @@
+Last login: Fri Dec 29 14:50:09 on ttys000
+-bash: export: `-w': not a valid identifier
+-bash: export: `-w': not a valid identifier
+pankhurikasliwal@pankhuris-MacBook-Air ~ (master)
+$ man gcc
+No manual entry for gcc
+pankhurikasliwal@pankhuris-MacBook-Air ~ (master)
+$ cd Documents
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ mak
+-bash: mak: command not found
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ make
+make: Nothing to be done for `all'.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ make
+gcc -c -fpic a.c
+gcc -shared a.o  -o libcalshared.so
+ar rcs libcalstatic.a a.o 
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. main.c -lcalshared -o sharedmain
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ ./staticmain
+-bash: ./staticmain: No such file or directory
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. main.c -ashared -o sharedmain
+clang: warning: argument unused during compilation: '-ashared' [-Wunused-command-line-argument]
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. main.c -lashared -o sharedmain
+ld: library not found for -lashared
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ make
+gcc -shared a.o  -o libcalshared.so
+ar rcs libcalstatic.a a.o 
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ man gcc -c
+No manual entry for gcc
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -c main.c
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c -lcalshared
+ld: library not found for -lcalshared
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. 'pwd'
+clang: error: no such file or directory: 'pwd'
+clang: error: no input files
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L$(pwd) main.c lcalshared
+clang: error: no such file or directory: 'lcalshared'
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. main.c lcalshared
+clang: error: no such file or directory: 'lcalshared'
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ ls
+BP.jpeg		a.c		a.o		lab1.c		libcalshared.so	main.c		string.c
+Makefile	a.h		c.txt		lab1.h		libcalstatic.a	main.o
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L.
+clang: error: no input files
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ echo $?
+1
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ ls
+BP.jpeg		a.c		a.o		lab1.c		libcalshared.so	main.c		string.c
+Makefile	a.h		c.txt		lab1.h		libcalstatic.a	main.o
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -static -L. main.c -lcalstatic -o staticmain
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ make
+make: Nothing to be done for `all'.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ make
+gcc -c -fpic a.c
+gcc -shared a.o  -o libcalshared.so
+ar rcs libcalstatic.a a.o 
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -static -L. main.c -lcalstatic -o staticmain
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ mfrw@kp: ./staticmain
+-bash: mfrw@kp:: command not found
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -static -L. main.c -lcalstatic -o staticmain
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ mfrw@kp: ./staticmain
+-bash: mfrw@kp:: command not found
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -static -L. main.c -libcalstatic -o staticmain
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ make
+gcc -c -fpic a.c
+gcc -shared a.o  -o libcalshared.so
+ar rcs libcalstatic.a a.o 
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$  gcc -L. main.c -libcalshared -o sharedmain
+ld: library not found for -libcalshared
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ export LD_LIBRARY_PATH=.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ ls
+BP.jpeg		a.c		a.o		lab1.c		libcalshared.so	main.c
+Makefile	a.h		c.txt		lab1.h		libcalstatic.a	string.c
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$  gcc -L. main.c -libcalshared -o sharedmain
+ld: library not found for -libcalshared
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$  gcc -L. main.c -libcalshared -o sharedmain
+ld: library not found for -libcalshared
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. -static -libcalstatic main.c
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. -static -libcalstatic main.c
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. -static -libcalstatic main.c
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ export LD_LIBRARY_PATH=.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. -static -libcalstatic main.c
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ make
+gcc -c -fpic a.c
+gcc -shared a.o  -o lcalshared.so
+ar rcs lcalstatic.a a.o 
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -L. -static main.c -lcalstatic
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ ls
+BP.jpeg		a.c		a.o		lab1.c		lcalshared.so	main.c
+Makefile	a.h		c.txt		lab1.h		lcalstatic.a	string.c
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc -static -L. main.c -lcalstatic -o staticmain
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ clang -static -L. main.c -lcalstatic -o staticmain
+ld: library not found for -lcrt0.o
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ git clone https://github.com/pankhuri22/refresher.git
+Cloning into 'refresher'...
+warning: You appear to have cloned an empty repository.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ git commit -m "firstcommit"
+[master 307e3c2] firstcommit
+ 59 files changed, 2 insertions(+), 85 deletions(-)
+ create mode 100644 Desktop/ .pdf
+ create mode 100644 Desktop/20170419_112156.jpg
+ delete mode 100644 Desktop/CS2ND.jpeg
+ delete mode 100644 Desktop/End Sem Exam Schedule_Monsoon 2017 copy.pdf
+ create mode 100644 Desktop/IMG_20171119_111238711_LL.jpg
+ create mode 160000 Desktop/Project
+ delete mode 100644 Desktop/Screen Shot 2017-11-09 at 6.59.04 PM.png
+ delete mode 100644 Desktop/Screen Shot 2017-11-14 at 7.17.17 PM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-18 at 12.38.28 AM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-18 at 3.52.45 PM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-22 at 4.55.45 PM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-25 at 12.10.34 PM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-25 at 12.46.51 PM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-25 at 12.48.00 PM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-25 at 12.48.36 PM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-25 at 12.49.57 PM.png
+ create mode 100644 Desktop/Screen Shot 2017-11-29 at 9.46.19 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 11.58.33 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.35.28 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.35.29 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.35.55 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.37.00 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.37.08 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.37.09 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.37.13 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.37.19 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.37.41 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.39.21 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.46.17 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.46.18 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.46.26 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.46.46 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.46.57 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.39 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.56 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.57 PM 1.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.57 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.58 PM 1.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.58 PM 2.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.58 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.59 PM 1.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.59 PM 2.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.47.59 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.48.00 PM 1.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.48.00 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.48.01 PM 1.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.48.01 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.48.12 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.48.14 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.48.34 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.48.51 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.49.25 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.50.08 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.50.59 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-21 at 9.51.02 PM.png
+ create mode 100644 Desktop/mehak anushka/Screen Shot 2017-11-22 at 12.12.23 AM.png
+ delete mode 100644 Desktop/nt.rtf
+ delete mode 100644 Desktop/timetable.jpeg
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ git remote add origin https://github.com/pankhuri22/refresher.git
+fatal: remote origin already exists.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c
+In file included from main.c:5:
+./a.h:4:6: error: conflicting types for 'strchr'
+int *strchr ( const char * , int);
+     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/string.h:76:7: note: 
+      previous declaration is here
+char    *strchr(const char *__s, int __c);
+         ^
+main.c:73:51: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  printf ("Character i is found at position %d\n",p-string+1);
+                                            ~~    ^~~~~~~~~~
+                                            %ld
+1 warning and 1 error generated.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c
+In file included from main.c:5:
+./a.h:4:6: error: conflicting types for 'strchr'
+int *strchr ( const char * , int);
+     ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/string.h:76:7: note: 
+      previous declaration is here
+char    *strchr(const char *__s, int __c);
+         ^
+1 error generated.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ ./a.out
+String after |.| is - |.tutorialspoint.com|
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c
+main.c:73:51: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  printf ("Character i is found at position %d\n",p-string+1);
+                                            ~~    ^~~~~~~~~~
+                                            %ld
+1 warning generated.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ ./a.out
+String after |.| is - |.com|
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c
+In file included from main.c:5:
+./a.h:4:7: error: expected parameter declarator
+char *strcat ( char * , const char * );
+      ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:46: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:39:62: note: 
+      expanded from macro '__darwin_obsz'
+#define __darwin_obsz(object) __builtin_object_size (object, _USE_FORTIFY_LEVEL > 1 ? 1 : 0)
+                                                             ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:30:32: note: 
+      expanded from macro '_USE_FORTIFY_LEVEL'
+#    define _USE_FORTIFY_LEVEL 2
+                               ^
+In file included from main.c:5:
+./a.h:4:7: error: expected ')'
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:46: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:39:62: note: 
+      expanded from macro '__darwin_obsz'
+#define __darwin_obsz(object) __builtin_object_size (object, _USE_FORTIFY_LEVEL > 1 ? 1 : 0)
+                                                             ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:30:32: note: 
+      expanded from macro '_USE_FORTIFY_LEVEL'
+#    define _USE_FORTIFY_LEVEL 2
+                               ^
+./a.h:4:7: note: to match this '('
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:46: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:39:53: note: 
+      expanded from macro '__darwin_obsz'
+#define __darwin_obsz(object) __builtin_object_size (object, _USE_FORTIFY_LEVEL > 1 ? 1 : 0)
+                                                    ^
+In file included from main.c:5:
+./a.h:4:7: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+char *strcat ( char * , const char * );
+      ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:46: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:39:31: note: 
+      expanded from macro '__darwin_obsz'
+#define __darwin_obsz(object) __builtin_object_size (object, _USE_FORTIFY_LEVEL > 1 ? 1 : 0)
+                              ^
+In file included from main.c:5:
+./a.h:4:7: error: conflicting types for '__builtin___strcat_chk'
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:3: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                ^
+./a.h:4:7: note: '__builtin___strcat_chk' is a builtin with type 'char *(char *, const char *, unsigned long)'
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:3: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                ^
+1 warning and 3 errors generated.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ gcc main.c
+In file included from main.c:5:
+./a.h:4:7: error: expected parameter declarator
+char *strcat ( char * , const char * );
+      ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:46: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:39:62: note: 
+      expanded from macro '__darwin_obsz'
+#define __darwin_obsz(object) __builtin_object_size (object, _USE_FORTIFY_LEVEL > 1 ? 1 : 0)
+                                                             ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:30:32: note: 
+      expanded from macro '_USE_FORTIFY_LEVEL'
+#    define _USE_FORTIFY_LEVEL 2
+                               ^
+In file included from main.c:5:
+./a.h:4:7: error: expected ')'
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:46: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:39:62: note: 
+      expanded from macro '__darwin_obsz'
+#define __darwin_obsz(object) __builtin_object_size (object, _USE_FORTIFY_LEVEL > 1 ? 1 : 0)
+                                                             ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:30:32: note: 
+      expanded from macro '_USE_FORTIFY_LEVEL'
+#    define _USE_FORTIFY_LEVEL 2
+                               ^
+./a.h:4:7: note: to match this '('
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:46: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:39:53: note: 
+      expanded from macro '__darwin_obsz'
+#define __darwin_obsz(object) __builtin_object_size (object, _USE_FORTIFY_LEVEL > 1 ? 1 : 0)
+                                                    ^
+In file included from main.c:5:
+./a.h:4:7: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+char *strcat ( char * , const char * );
+      ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:46: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_common.h:39:31: note: 
+      expanded from macro '__darwin_obsz'
+#define __darwin_obsz(object) __builtin_object_size (object, _USE_FORTIFY_LEVEL > 1 ? 1 : 0)
+                              ^
+In file included from main.c:5:
+./a.h:4:7: error: conflicting types for '__builtin___strcat_chk'
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:3: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                ^
+./a.h:4:7: note: '__builtin___strcat_chk' is a builtin with type 'char *(char *, const char *, unsigned long)'
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/secure/_string.h:131:3: note: 
+      expanded from macro 'strcat'
+                __builtin___strcat_chk (dest, __VA_ARGS__, __darwin_obsz (dest))
+                ^
+1 warning and 3 errors generated.
+pankhurikasliwal@pankhuris-MacBook-Air ~/Documents (master)
+$ 
